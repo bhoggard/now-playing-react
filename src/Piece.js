@@ -4,7 +4,7 @@ class Piece extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {title: "", composer: ""}
+    this.state = { title: "", composer: "" }
   }
 
   componentDidMount() {
@@ -13,7 +13,7 @@ class Piece extends Component {
   }
 
   loadData = () => {
-    const ApiHost = "https://now-playing-api.gigalixirapp.com/"
+    const ApiHost = "https://now-playing-api.vercel.app/"
     const request = new XMLHttpRequest();
     request.open('GET', ApiHost + "api/" + this.props.source, true);
     request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
@@ -26,7 +26,7 @@ class Piece extends Component {
           composer: returnedJson.composer
         });
       }
-    };   
+    };
     request.send();
   }
 
