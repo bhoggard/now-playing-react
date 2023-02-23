@@ -16,8 +16,7 @@ class Piece extends Component {
     const ApiHost = "https://now-playing-api.vercel.app/"
     const request = new XMLHttpRequest();
     request.open('GET', ApiHost + "api/" + this.props.source, true);
-    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-    //this callback gets called when the server responds to the ajax call            
+    // this callback gets called when the server responds to the ajax call
     request.onreadystatechange = () => {
       if (request.readyState === 4 && request.status === 200) {
         const returnedJson = JSON.parse(request.responseText);
